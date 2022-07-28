@@ -22,3 +22,10 @@ ORDER BY "testimonailCount" DESC
 
 
 -- Exercício 4
+
+SELECT MAX(salary) AS "maximumSalary", r.name AS role
+FROM jobs j
+JOIN roles r ON r.id = j."roleId"
+WHERE j.active = true
+GROUP BY r.id
+ORDER BY "maximumSalary" ASC
